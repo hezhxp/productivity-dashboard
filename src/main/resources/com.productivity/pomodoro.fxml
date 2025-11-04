@@ -11,4 +11,5 @@
     <Label fx:id="timerLabel" text="25:00" style="-fx-font-size:36px;"/>
     <Button fx:id="startButton" text="Start" onAction="#startTimer"/>
     <Button fx:id="resetButton" text="Reset" onAction="#resetTimer"/>
+    <Button text="← Back" onAction="#switchToDashboard"/>
 </VBox>

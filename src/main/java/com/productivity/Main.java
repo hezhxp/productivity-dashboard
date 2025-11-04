@@ -10,12 +10,14 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com.productivity/dashboard.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
+        scene.getStylesheets().add(getClass().getResource("/com.productivity/styles.css").toExternalForm());
         stage.setTitle("Productivity Dashboard");
         stage.setScene(scene);
         stage.show();
     }
 
+
     public static void main(String[] args) {
-        launch();
+        launch(args);
     }
 }

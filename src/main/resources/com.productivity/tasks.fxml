@@ -14,4 +14,6 @@
         <Button fx:id="removeButton" text="Remove" onAction="#removeTask"/>
     </HBox>
     <ListView fx:id="taskList" prefHeight="200"/>
+    <Button text="← Back" onAction="#switchToDashboard"/>
+
 </VBox>

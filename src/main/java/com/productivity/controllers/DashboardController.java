@@ -3,42 +3,42 @@ package com.productivity.controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.layout.StackPane;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 import java.io.IOException;
 
 public class DashboardController {
 
-    @FXML
-    private StackPane contentArea;
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
 
     @FXML
-    protected void initialize() {
-        loadView("tasks.fxml");
+    public void switchToPomodoro(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("/com.productivity/pomodoro.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
-    protected void onTasksClicked(ActionEvent event) {
-        loadView("tasks.fxml");
+    public void switchToTasks(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("/com.productivity/tasks.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
-    protected void onPomodoroClicked(ActionEvent event) {
-        loadView("pomodoro.fxml");
-    }
-
-    @FXML
-    protected void onNotesClicked(ActionEvent event) {
-        loadView("notes.fxml");
-    }
-
-    private void loadView(String fxml) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com.productivity/" + fxml));
-            contentArea.getChildren().clear();
-            contentArea.getChildren().add(loader.load());
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public void switchToNotes(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("/com.productivity/notes.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 }

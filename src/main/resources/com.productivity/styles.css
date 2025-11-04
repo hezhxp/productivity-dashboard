@@ -1,0 +1,32 @@
+.root {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-background-color: #20232a;
+    -fx-text-fill: white;
+}
+
+.main-pane {
+    -fx-background-color: #20232a;
+}
+
+.toolbar {
+    -fx-background-color: #282c34;
+    -fx-padding: 10;
+}
+
+.button {
+    -fx-background-color: #61dafb;
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #21a1f1;
+}
+
+.notes-area {
+    -fx-control-inner-background: #1e2127;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10;
+}

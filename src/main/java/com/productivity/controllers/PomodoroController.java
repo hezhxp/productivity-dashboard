@@ -3,9 +3,16 @@ package com.productivity.controllers;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 import javafx.util.Duration;
+import javafx.event.ActionEvent;
+import java.io.IOException;
 
 public class PomodoroController {
     @FXML
@@ -56,4 +63,13 @@ public class PomodoroController {
         int secs = seconds % 60;
         timerLabel.setText(String.format("%02d:%02d", mins, secs));
     }
+
+    @FXML
+    public void switchToDashboard(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com.productivity/dashboard.fxml"));
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
+
 }
