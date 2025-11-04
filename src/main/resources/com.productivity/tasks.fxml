@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml" prefWidth="600" prefHeight="400">
-    <Label text="Tasks Page" layoutX="250" layoutY="180" style="-fx-font-size: 24;" />
-</AnchorPane>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.productivity.controllers.TasksController"
+      alignment="CENTER" spacing="10" style="-fx-padding:20;">
+    <TextField fx:id="taskInput" promptText="Enter task..."/>
+    <HBox spacing="10">
+        <Button fx:id="addButton" text="Add" onAction="#addTask"/>
+        <Button fx:id="removeButton" text="Remove" onAction="#removeTask"/>
+    </HBox>
+    <ListView fx:id="taskList" prefHeight="200"/>
+</VBox>
